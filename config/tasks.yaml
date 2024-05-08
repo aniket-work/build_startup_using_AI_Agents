@@ -1,0 +1,51 @@
+# Job Discovery
+job_discovery:
+  agent: JobHuntr
+  description: |
+    Taps into various resources, including online platforms, databases, and human networks, 
+    to identify job openings and vacancies across the internet.
+  expected_output: A comprehensive list of job opportunities ready for further action.
+
+# Resume Analysis
+resume_analysis:
+  agent: ResuMate
+  description: |
+    Processes a large volume of resumes, filtering out the most qualified candidates 
+    based on predetermined criteria.
+  expected_output: A shortlist of top candidates suitable for the identified job openings.
+
+# Candidate Engagement
+candidate_engagement:
+  agent: CoverStar
+  description: |
+    Engages with the shortlisted candidates by crafting personalized and compelling 
+    outreach messages.
+  expected_output: Initial contact with potential hires, setting the stage for further recruitment steps.
+
+# Company Research
+company_research:
+  agent: OrgSleuth
+  description: |
+    Investigates the organizational culture and values of companies with job openings 
+    to ensure alignment with candidate expectations.
+  expected_output: In-depth company profiles that assist in matching candidates with the right organizational fit.
+
+# Workflow Coordination
+workflow_coordination:
+  agent: MetaMinion
+  description: |
+    Serves as the strategic hub, orchestrating the workflow between all agents, 
+    ensuring seamless integration and efficiency.
+  expected_output: |
+    Optimized matching of candidates with job openings and company cultures, 
+    ready for final engagement.
+
+# Final Matching & Onboarding
+final_matching:
+  agent: MetaMinion
+  description: |
+    Synthesizes information from ResuMate's candidate shortlist with OrgSleuth's company insights 
+    to finalize candidate-company matches.
+  expected_output: |
+    Successful placement of candidates in roles that align with their professional aspirations 
+    and the company's culture.
