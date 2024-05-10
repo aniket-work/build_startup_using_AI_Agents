@@ -1,0 +1,7 @@
+crewai
+requests
+langchain-groq
+beautifulsoup4
+python-dotenv
+opencv-python
+google-search-results
