@@ -4,13 +4,19 @@ from textwrap import dedent
 class RecruitmentTasks:
     def job_search(self, agent):
         return Task(
+            name="Job Search Task",
             description=dedent("""
-                Search for job openings in finance, tech, and manufacturing domains across various job websites and platforms.
-                Compile a comprehensive list of relevant job opportunities, including job titles, company names, and locations.
-                Your output should be a JSON file containing the scraped job opening data, organized by domain.
+                Search for job openings in finance, tech, and cyber security domains across various job websites and platforms.
+                Compile a comprehensive list of relevant job opportunities, including job titles, website link of job posting, company names, job description and locations.
+                Make use of the Google Jobs Search tool to search for job openings on the web.
+                Your output should be a JSON file containing the scraped job opening data, organized by domain with more detailed information such as required skills, qualifications, and salary range (if available).
             """),
             agent=agent,
-            expected_output="A JSON file containing job opening data scraped from various job sites, organized by domain.",
+            input={
+                "query": "finance jobs",
+                "location": "New York"
+            },
+            expected_output="A JSON file containing detailed job opening data scraped from various job sites, organized by domain.",
             output_file="job_openings.json"
         )
 

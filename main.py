@@ -1,8 +1,10 @@
 import os
 import json
+
 from agents import RecruitmentAgents
 from tasks import RecruitmentTasks
 from crewai import Crew
+
 
 # Create dummy resumes
 def create_dummy_resumes(num_resumes):
@@ -60,7 +62,7 @@ save_data(resumes, job_openings)
 resumes, job_openings = load_data()
 
 # Create agents
-recruitment_agents = RecruitmentAgents()
+recruitment_agents = RecruitmentAgents(use_groq=False)
 job_hunter = recruitment_agents.job_hunter_agent()
 resume_analyst = recruitment_agents.resume_analyst_agent()
 candidate_engagement = recruitment_agents.candidate_engagement_agent()
@@ -77,16 +79,16 @@ final_matching_task = recruitment_tasks.final_matching(workflow_orchestrator)
 
 # Create crew
 recruitment_crew = Crew(
-    agents=[job_hunter, resume_analyst, candidate_engagement, company_investigator, workflow_orchestrator],
-    tasks=[job_search_task, resume_analysis_task, candidate_outreach_task, company_research_task, final_matching_task],
+    agents=[job_hunter],
+    tasks=[job_search_task],
     verbose=True
 )
 
 # Run the recruitment process
-recruitment_crew.kickoff()
+result = recruitment_crew.kickoff()
 
 # Print the results
 print("\n\n########################")
 print("## Recruitment Results")
 print("########################\n")
-print(recruitment_crew.result)
+print(result)
