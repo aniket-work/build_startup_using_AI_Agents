@@ -6,7 +6,7 @@ class RecruitmentTasks:
         return Task(
             name="Job Search Task",
             description=dedent("""
-                Search for job openings in finance, tech, and cyber security domains across various job websites and platforms.
+                Search for job openings in finance domains across various job websites and platforms.
                 Compile a comprehensive list of relevant job opportunities, including job titles, website link of job posting, company names, job description and locations.
                 Make use of the Google Jobs Search tool to search for job openings on the web.
                 Your output should be a JSON file containing the scraped job opening data, organized by domain with more detailed information such as required skills, qualifications, and salary range (if available).

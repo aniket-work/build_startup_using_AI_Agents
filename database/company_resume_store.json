@@ -1,0 +1,89 @@
+[
+  {
+    "name": "John Doe",
+    "address": "123 Main St.\nAnytown, CA 12345",
+    "phone": "(555) 555-5555",
+    "email": "john.doe@email.com",
+    "position": "CHIEF FINANCIAL OFFICER",
+    "summary": "Accomplished financial executive with over 15 years of experience leading finance operations for multinational corporations...",
+    "professional_experience": [
+      {
+        "company": "iLink Business Management, Rancho Cucamonga, CA",
+        "position": "Chief Financial Officer",
+        "duration": "(2018 - Present)",
+        "responsibilities": [
+          "- Oversaw financial operations for a leading business management firm with $100M+ in annual revenue.",
+          "- Developed and executed financial strategies to streamline operations, reduce costs, and improve profitability.",
+          "- Managed a team of 20+ finance professionals, providing guidance and mentorship.",
+          "- Prepared and analyzed monthly, quarterly, and annual financial reports for executive leadership and board of directors.",
+          "- Collaborated with cross-functional teams to develop and implement operational strategies aligned with financial objectives.",
+          "- Ensured compliance with generally accepted accounting principles (GAAP), regulatory requirements, and internal policies."
+        ]
+      },
+      {
+        "company": "ABC Corporation, Los Angeles, CA",
+        "position": "Vice President of Finance",
+        "duration": "(2012 - 2018)",
+        "responsibilities": [
+          "- Directed all financial planning, reporting, and accounting activities for a global manufacturing company with $500M+ in revenue.",
+          "- Led the annual budgeting and forecasting processes, ensuring accurate projections and resource allocation.",
+          "- Implemented cost-saving initiatives, resulting in $5M in annual savings.",
+          "- Managed relationships with external auditors, banks, and investors, ensuring transparency and compliance.",
+          "- Supervised the preparation of financial statements, tax returns, and regulatory filings."
+        ]
+      }
+    ],
+    "education": {
+      "MBA": "University of California, Los Angeles (UCLA)",
+      "BS": "California State University, Fullerton"
+    },
+    "certifications": ["Certified Public Accountant (CPA)", "Certified Management Accountant (CMA)"],
+    "skills": [
+      "Financial Analysis & Reporting",
+      "Budgeting & Forecasting",
+      "Risk Management",
+      "Strategic Planning",
+      "Team Leadership",
+      "Cross-Functional Collaboration",
+      "Regulatory Compliance",
+      "Cost Optimization"
+    ]
+  },
+  {
+    "name": "Jane Smith",
+    "address": "456 Oak Road\nSometown, CA 67890",
+    "phone": "(555) 555-5556",
+    "email": "jane.smith@email.com",
+    "position": "CHIEF FINANCIAL OFFICER",
+    "summary": "Highly accomplished financial leader with over 12 years of experience in managing financial operations for Fortune 500 companies...",
+    "professional_experience": [
+      {
+        "company": "XYZ Corporation, San Francisco, CA",
+        "position": "Chief Financial Officer",
+        "duration": "(2020 - Present)",
+        "responsibilities": [
+          "- Oversee all financial activities, including accounting, budgeting, forecasting, and reporting for a $2B global corporation.",
+          "- Lead a team of 30+ finance professionals, providing strategic direction and mentorship.",
+          "- Collaborate with executive leadership to develop and implement financial strategies aligned with business objectives.",
+          "- Manage relationships with external auditors, regulatory agencies, and investment community.",
+          "- Implemented process improvements and automation initiatives, resulting in $8M in annual savings."
+        ]
+      },
+      {
+        "company": "GlobalTech Inc., San Diego, CA",
+        "position": "Vice President of Finance",
+        "duration": "(2015 - 2020)",
+        "responsibilities": [
+          "- Directed financial planning, analysis, and reporting for a multinational technology company with $1B+ in revenue.",
+          "- Led the annual budgeting and forecasting processes, ensuring accurate projections and resource allocation.",
+          "- Implemented cost optimization strategies, resulting in $3M in annual savings.",
+          "- Managed relationships with external auditors, banks, and investors, ensuring transparency and compliance.",
+          "- Supervised the preparation of financial statements, tax returns, and regulatory filings."
+        ]
+      }
+    ],
+    "education": {
+      "MBA": "University of Southern California (USC)",
+      "BS": "San Diego State University"
+    },
+    "certifications":

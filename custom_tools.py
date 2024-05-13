@@ -1,86 +1,45 @@
 from serpapi import GoogleSearch
-import json
-
-from serpapi import GoogleSearch
-import json
-
-class JobScraper:
-    def __init__(self, api_key):
-        self.api_key = api_key
-
-    def run(self, search_query, num_results=20):
-        params = {
-            "api_key": self.api_key,
-            "engine": "google_jobs",
-            "query": search_query,
-            "num_jobs": num_results,
-            "start": 0
-        }
-
-        client = GoogleSearch(params)
-        results = client.get_dict()
-
-        job_listings = []
-        for job in results.get("jobs_results", []):
-            job_listing = {
-                "title": job.get("title", ""),
-                "company_name": job.get("company_name", ""),
-                "location": job.get("location", ""),
-                "job_description": job.get("description", ""),
-                "job_link": job.get("job_link", ""),
-                "salary_range": job.get("salary_estimate", ""),
-                "qualifications": job.get("qualifications", "")
-            }
-            job_listings.append(job_listing)
-
-        return job_listings
-
-from serpapi import GoogleSearch
+import  json
 
 class JobScrapeQueryRun:
     def __init__(self, api_key):
         self.api_key = api_key
 
-    def run(self, query_dict):
-        search_query = query_dict.get("query")
-        location = query_dict.get("location", "United States")
-        num_results = query_dict.get("num_results", 20)
+    def scrape_google_jobs_listing(self, job_ids):  # Add self as the first argument
+        data = []
 
+        for job_id in job_ids:
+            params = {
+                'api_key': self.api_key,  # Use self.api_key
+                'engine': 'google_jobs_listing',
+                'q': job_id,
+            }
+
+            search = GoogleSearch(params)
+            results = search.get_dict()
+
+            data.append({
+                'job_id': job_id,
+                'apply_options': results.get('apply_options'),
+                'salaries': results.get('salaries'),
+                'ratings': results.get('ratings')
+            })
+
+        return data
+
+    def extract_multiple_jobs(self):  # Add self as the first argument
         params = {
-            "api_key": self.api_key,
-            "engine": "google_jobs",
-            "query": search_query,
-            "location": location,
-            "num_jobs": num_results,
-            "start": 0
+            'api_key': self.api_key,
+            'engine': 'google_jobs',
+            'gl': 'us',
+            'hl': 'en',
+            'q': 'barista new york',
         }
 
-        client = GoogleSearch(params)
-        results = client.get_dict()
+        search = GoogleSearch(params)
+        results = search.get_dict()
+        job_ids = [job.get('job_id') for job in results['jobs_results']]
 
-        job_listings = []
-        for job in results.get("jobs_results", []):
-            job_listing = {
-                "title": job.get("title", ""),
-                "company_name": job.get("company_name", ""),
-                "location": job.get("location", ""),
-                "job_description": job.get("description", ""),
-                "job_link": job.get("job_link", ""),
-                "salary_range": job.get("salary_estimate", ""),
-                "qualifications": job.get("qualifications", "")
-            }
-            job_listings.append(job_listing)
+        # Call self.scrape_google_jobs_listing with job_ids obtained from extract_multiple_jobs
+        return json.dumps(self.scrape_google_jobs_listing(job_ids), indent=2, ensure_ascii=False)
 
-        return job_listings
-
-    def validate_input(self, action_input):
-        if not isinstance(action_input, dict):
-            return False
-
-        if "query" not in action_input:
-            return False
-
-        return True
-
-    def format_error(self, action_input):
-        return f"Invalid input format. Expected a dictionary with key 'query'. Received: {action_input}"

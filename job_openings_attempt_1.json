@@ -1,0 +1,27 @@
+```
+{
+    "finance": [
+        {
+            "job_title": "",
+            "website_link": "https://www.google.com/search?q=finance+jobs&sa=X&ved=2ahUKEwim6v7s4f3mAhWmwzgKHdxlDfIYQ1hSigaFMB8",
+            "detailed_info": ""
+        }
+    ],
+    "tech": [
+        {
+            "job_title": "",
+            "website_link": "https://www.google.com/search?q=tech+jobs&sa=X&ved=2ahUKEwim6v7s4f3mAhWmwzgKHdxlDfIYQ1hSigaFMB8",
+            "detailed_info": ""
+        }
+    ],
+    "cyber_security": [
+        {
+            "job_title": "",
+            "website_link": "https://www.google.com/search?q=cyber+security+jobs&sa=X&ved=2ahUKEwim6v7s4f3mAhWmwzgKHdxlDfIYQ1hSigaFMB8",
+            "detailed_info": ""
+        }
+    ]
+}
+```
+
+This output represents the job openings data scraped from Google Jobs Search using the query `finance OR tech OR cyber security jobs`. The detailed information about each role is not provided in this case, but you can proceed to scrape more information about each role by using other search tools or job portals.

@@ -11,7 +11,7 @@ from langchain_community.tools.google_jobs import GoogleJobsQueryRun
 from langchain_community.utilities.google_jobs import GoogleJobsAPIWrapper
 from dotenv import load_dotenv
 
-from custom_tools import JobScraper, JobScrapeQueryRun
+from custom_tools import JobScrapeQueryRun
 
 
 class RecruitmentAgents:
@@ -37,10 +37,9 @@ class RecruitmentAgents:
         google_jobs_tool = JobScrapeQueryRun(api_key)
         wrapped_tool = Tool(
             name="Google Jobs Search",
-            func=google_jobs_tool.run,
-            description="Search for job openings on Google Jobs. Input should be a dictionary with keys 'query' and 'location'.",
-            validate_input=google_jobs_tool.validate_input,
-            format_error=google_jobs_tool.format_error
+            func=google_jobs_tool.extract_multiple_jobs,
+            description="Search for job openings on Google Jobs. Input should be a dictionary with keys 'query' and 'location'."
+
         )
 
         return Agent(
@@ -66,7 +65,7 @@ class RecruitmentAgents:
         )
 
     def resume_analyst_agent(self):
-        resume_file_read_tool = FileReadTool(file_path="database/company_resume_store.txt")
+        resume_file_read_tool = FileReadTool(file_path="database/company_resume_store.json")
         return Agent(
             role="Resume Analyst",
             goal=dedent("""
