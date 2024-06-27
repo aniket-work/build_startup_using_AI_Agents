@@ -27,13 +27,14 @@ class JobScrapeQueryRun:
 
         return data
 
-    def extract_multiple_jobs(self):  # Add self as the first argument
+    def extract_multiple_jobs(self, query: str, location: str):  # Add self as the first argument
         params = {
             'api_key': self.api_key,
             'engine': 'google_jobs',
             'gl': 'us',
             'hl': 'en',
-            'q': 'barista new york',
+            'q': query,
+            'location': location,
         }
 
         search = GoogleSearch(params)
